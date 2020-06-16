@@ -1,0 +1,17 @@
+<h1>Welcome to your timeline filter</h1>
+<%= form_tag timelines_path do %>
+  <div class="form-control">
+    <%= label_tag :date_from, 'Date from' %>
+    <%= text_field_tag :date_from, Time.zone.now, type: 'datetime-local' %>
+  </div>
+  <div class="form-control">
+    <%= label_tag :date_to, 'Date to' %>
+    <%= text_field_tag :date_to, Time.zone.now, type: 'datetime-local' %>
+  </div>
+  <div class="form-control">
+    <%= label_tag :mail, 'Mail' %>
+    <%= text_field_tag :mail, '', type: 'email', required: true %>
+  </div>
+  <p id="notice"><%= flash[:notice] %></p>
+  <button type="submit">Submit</button>
+<% end %>
